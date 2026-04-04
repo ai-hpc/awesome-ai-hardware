@@ -25,6 +25,7 @@
     - [Ultra-low-power NPUs and IoT](#ultra-low-power-npus-and-iot)
   - [Technical trends (2026)](#technical-trends-2026)
 - [Retail & Supermarket AI](#retail--supermarket-ai)
+- [Smart Home AI](#smart-home-ai)
 - [Compilers & Runtimes](#compilers--runtimes)
 - [Benchmarks & Profiling](#benchmarks--profiling)
 - [Tutorials & Courses](#tutorials--courses)
@@ -280,6 +281,44 @@ Representative GitHub projects that exercise each vendor stack in practice. Star
 ### Product Data
 
 - [OpenFoodFacts](https://github.com/openfoodfacts/openfoodfacts-server) ★1k — Open product database (barcode → product metadata); foundation layer for self-checkout product lookup, inventory enrichment, and product recognition training data.
+
+
+## Smart Home AI
+
+> The smart home AI stack runs on low-power edge hardware — Raspberry Pi, ESP32, Jetson Nano, or a mini-PC — entirely without cloud dependency. The projects below cover the full pipeline: device firmware → camera AI → local voice (wake word → STT → LLM → TTS) → protocol bridging.
+
+### Platform & Orchestration
+
+- [Home Assistant](https://github.com/home-assistant/core) ★86k — Dominant open-source home automation platform; local-first, privacy-focused. Natively integrates Frigate (camera AI), Whisper (local STT), and Piper (local TTS) via the Wyoming protocol for a fully offline voice assistant.
+- [Node-RED](https://github.com/node-red/node-red) ★23k — Flow-based visual programming for wiring IoT sensors, AI APIs, and devices; runs on Raspberry Pi and any Node.js host.
+- [openHAB](https://github.com/openhab/openhab-core) ★1.1k — Vendor-neutral Java-based home automation runtime with a strong rules engine and large device binding ecosystem.
+
+### Device Firmware (ESP32 / MCU)
+
+- [ESPHome](https://github.com/esphome/esphome) ★10.8k — Config-file-driven firmware for ESP32 / ESP8266 / RP2040; first-class Home Assistant integration; supports on-device wake-word detection and sensor ML.
+- [Tasmota](https://github.com/arendst/Tasmota) ★24k — Alternative ESP8266/ESP32 firmware with web UI, OTA, and MQTT; entirely local, no cloud. Widely used for smart plugs, lights, and DIY sensors.
+
+### Camera AI & Streaming
+
+- [Frigate](https://github.com/blakeblackshear/frigate) ★31k — NVR with always-on local object detection; natively supports Coral Edge TPU and Hailo-8/8L M.2 for hardware-accelerated inference. (Also listed in Small boards section.)
+- [go2rtc](https://github.com/AlexxIT/go2rtc) ★12.7k — High-performance camera streaming hub supporting RTSP, WebRTC, HomeKit, and MSE; the standard camera bridge layer used with Frigate and Home Assistant.
+- [Scrypted](https://github.com/koush/scrypted) ★5.6k — Video integration and home automation platform with AI plugins; bridges cameras from any vendor into HomeKit, Google Home, and Home Assistant with local object detection.
+
+### Local Voice Pipeline
+
+- [whisper.cpp](https://github.com/ggerganov/whisper.cpp) ★48k — C/C++ inference of OpenAI Whisper ASR; optimized for Raspberry Pi, Apple Silicon, and x86 edge hosts. The local STT engine inside Home Assistant Assist.
+- [Piper](https://github.com/rhasspy/piper) ★10.7k — Fast local neural text-to-speech; default TTS in Home Assistant Assist and offline voice assistants; runs in real time on a Raspberry Pi.
+- [openWakeWord](https://github.com/dscripka/openWakeWord) ★2k — Audio wake-word and phrase detection for triggering local voice pipelines on always-on edge hardware without cloud.
+- [Rhasspy](https://github.com/rhasspy/rhasspy) ★2.7k — Fully offline voice assistant supporting 20+ languages; intent recognition and speech pipeline run on Raspberry Pi with no cloud service.
+
+### Local LLM Integration
+
+- [Ollama](https://github.com/ollama/ollama) ★167k — Run LLaMA, Mistral, Gemma, Phi, and other LLMs locally on any hardware; increasingly used as the natural-language reasoning backend in Home Assistant automations.
+- [LocalAI](https://github.com/mudler/LocalAI) ★44k — Local AI engine running LLMs, vision models, STT, and TTS via an OpenAI-compatible API; no GPU required; bridges multiple AI functions into home automation platforms.
+
+### Protocol & Device Integration
+
+- [Zigbee2MQTT](https://github.com/Koenkk/zigbee2mqtt) ★15k — Bridges 3000+ Zigbee devices (sensors, lights, locks, buttons) to MQTT without a proprietary hub; eliminates cloud dependency for the most common smart home sensor protocol.
 
 
 ## Compilers & Runtimes
