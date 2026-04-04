@@ -24,6 +24,7 @@
     - [Industrial and robotics modules](#industrial-and-robotics-modules)
     - [Ultra-low-power NPUs and IoT](#ultra-low-power-npus-and-iot)
   - [Technical trends (2026)](#technical-trends-2026)
+- [Retail & Supermarket AI](#retail--supermarket-ai)
 - [Compilers & Runtimes](#compilers--runtimes)
 - [Benchmarks & Profiling](#benchmarks--profiling)
 - [Tutorials & Courses](#tutorials--courses)
@@ -253,6 +254,32 @@ Representative GitHub projects that exercise each vendor stack in practice. Star
 - INT8 remains the default for CNNs at the edge; INT4, FP4, and FP8 are spreading for transformers where vendor kernels exist.
 - Strong stacks partition work across NPU, GPU, DSP, and CPU; compiler and operator support often decide real-world wins.
 - Packaging and near-compute memory bandwidth frequently cap throughput before raw MAC counts.
+
+
+## Retail & Supermarket AI
+
+> Edge AI in retail combines a detector, a tracker, and a pipeline tool — deployed on Jetson, Hailo, or Intel NPU hardware. No single high-star repo is dedicated purely to retail; the stack is assembled from the projects below. Cashierless-store stacks (Amazon Just Walk Out, Standard AI) remain largely proprietary.
+
+### Detection & Tracking
+
+- [Ultralytics YOLO (v8/v11)](https://github.com/ultralytics/ultralytics) ★55k — Real-time object detection backbone for shelf scanning, product recognition, self-checkout item detection, queue person-counting, and loss prevention. First-class export to Jetson (TensorRT), Hailo, Coral (TFLite), and OpenVINO.
+- [Roboflow Supervision](https://github.com/roboflow/supervision) ★37k — Reusable CV primitives — zone-based counting, tracker wrappers, line crossing, heatmaps — used as the standard glue layer for retail pipelines on top of any YOLO detector.
+- [ByteTrack](https://github.com/ifzhang/ByteTrack) ★10k — High-accuracy multi-object tracker; used for queue length measurement, customer dwell analysis, and item association in cashierless store prototypes. Runs on Jetson with TensorRT backends.
+- [SORT](https://github.com/abewley/sort) ★4k — Minimal real-time tracker; the lightweight backbone in footfall counters and queue systems on Raspberry Pi, Jetson Nano, and Coral-paired boards.
+
+### Anomaly Detection & Shelf Monitoring
+
+- [Anomalib](https://github.com/open-edge-platform/anomalib) ★5.5k — Anomaly detection library used for shelf gap / out-of-stock detection, damaged-packaging identification, and distribution-center quality control. Explicit OpenVINO optimization for edge deployment on Intel NPU and Jetson.
+
+### Multi-Camera Analytics
+
+- [NVIDIA DeepStream Reference Apps](https://github.com/NVIDIA-AI-IOT/deepstream_reference_apps) ★1.3k — GStreamer-based multi-stream analytics on Jetson; covers people tracking, zone dwell time, and inventory monitoring for retail production deployments.
+- [OpenDataCam](https://github.com/opendatacam/opendatacam) ★1.7k — Turnkey object counting and tracking for footfall analytics, queue monitoring, and zone counting; originally built for NVIDIA Jetson with no cloud dependency.
+- [Viseron](https://github.com/roflcoopter/viseron) ★2.7k — Self-hosted NVR with integrated object detection, motion, and face recognition for small retailers; runs locally on Raspberry Pi and Jetson.
+
+### Product Data
+
+- [OpenFoodFacts](https://github.com/openfoodfacts/openfoodfacts-server) ★1k — Open product database (barcode → product metadata); foundation layer for self-checkout product lookup, inventory enrichment, and product recognition training data.
 
 
 ## Compilers & Runtimes
