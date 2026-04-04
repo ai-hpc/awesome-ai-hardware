@@ -133,42 +133,52 @@ Vendor TOPS, *AI-Benchmark*, and *Geekbench AI* scores measure different things;
 
 ### Small boards & maker / prototyping
 
-- [NVIDIA Jetson Orin Nano / NX](https://developer.nvidia.com/embedded/jetson-orin) - NVIDIA modules, ~20-100 TOPS class. Common robotics and vision proofs of concept; effective performance depends on power mode.
-- [Qualcomm Dragonwing / robotics dev kits](https://www.qualcomm.com/products/iot) - IoT and robotics kits (e.g. Dragonwing QCS6490-class) with integrated Qualcomm AI Engine for embedded Linux vision and robotics prototypes.
-- [Hailo-8 / Hailo-8L](https://hailo.ai/products/ai-accelerators/hailo-8-ai-accelerator/) - Hailo M.2 and USB accelerators, ~13-26 TOPS class. Popular gumstick and module form factors.
-- [Coral Dev Board / Dev Board Mini](https://coral.ai/products/dev-board/) - Google boards with Edge TPU, ~4 INT8 TOPS. Small-scale LiteRT deployment and USB or M.2 accelerator ecosystem.
-- [Orange Pi 5 (RK3588 / S)](http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/details/Orange-Pi-5.html) - Rockchip RK3588 SBC, ~6 TOPS class NPU. Budget board with a usable integrated NPU.
-- [BeagleBone AI-64](https://www.beagleboard.org/ai-64) - BeagleBoard.org SBC, ~8 TOPS class. Open hardware-friendly TI edge-AI SoC.
+- [Raspberry Pi 5 + AI Kit](https://www.raspberrypi.com/products/ai-kit/) - Raspberry Pi Foundation, 13 TOPS via Hailo-8L M.2 module. The de-facto hobbyist AI board; the entire Hailo community ecosystem and tutorial base centers on this configuration.
+- [NVIDIA Jetson Orin Nano / NX](https://developer.nvidia.com/embedded/jetson-orin) - NVIDIA modules, 20–100 TOPS class. Common robotics and vision proofs of concept; performance depends on power mode and thermal design.
+- [Qualcomm Dragonwing RB3 Gen 2 / RB5](https://www.qualcomm.com/products/iot) - Qualcomm IoT EVKs with Hexagon AI Engine (QCS6490 / QCS8550 class). Active ROS 2 ecosystem via qualcomm-qrb-ros; target for Android and Qualcomm Linux embedded AI.
+- [Hailo-8 / Hailo-8L M.2](https://hailo.ai/products/ai-accelerators/hailo-8-ai-accelerator/) - Hailo M.2 accelerator modules, 13–26 TOPS. Drop into any M.2 host; Hailo Dataflow Compiler compiles ONNX / TFLite to `.hef` runtime packages.
+- [Radxa Rock 5B](https://radxa.com/products/rock5/5b/) - Rockchip RK3588 SBC, ~6 TOPS NPU. Strong community and driver coverage; same RKNN model-zoo ecosystem as Orange Pi 5.
+- [Orange Pi 5 (RK3588 / S)](http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/details/Orange-Pi-5.html) - Rockchip RK3588 SBC, ~6 TOPS NPU. Budget-friendly alternative with a usable integrated NPU.
+- [Khadas VIM4](https://www.khadas.com/vim4) - Amlogic A311D2 SBC, ~5 TOPS NPU. Compact form-factor; popular for lightweight demo pipelines.
+- [Coral Dev Board / Dev Board Mini](https://coral.ai/products/dev-board/) - Google boards with Edge TPU, ~4 INT8 TOPS. Small-scale LiteRT deployment; in maintenance mode.
+- [BeagleBone AI-64](https://www.beagleboard.org/ai-64) - BeagleBoard.org SBC, ~8 TOPS class. Open hardware-friendly TI Jacinto 7 edge-AI SoC; good for industrial prototyping.
 
 ### Automotive & transportation
 
-- [NVIDIA DRIVE Thor](https://developer.nvidia.com/drive) - NVIDIA automotive SoC, ~1000 INT8 TOPS (NVIDIA-quoted) and ~2000 FP4-class effective throughput (vendor framing). Do not equate INT8 TOPS and FP4 figures without reading definitions.
-- [Qualcomm Snapdragon Ride / Flex](https://www.qualcomm.com/products/automotive) - Qualcomm automotive platforms, hundreds to 1000+ TOPS class depending on SKU. Scalable ADAS through higher automation tiers.
-- [Hailo-10H](https://hailo.ai/products/ai-accelerators/hailo-10h-ai-accelerator/) - Hailo automotive and edge accelerator, ~40 TOPS class. In-vehicle and edge vision.
-- [Mobileye EyeQ (Ultra+ class)](https://www.mobileye.com/technology/) - Intel / Mobileye vision SoC, ~500+ class. Vision-centric stacks; definitions vary by generation.
-- [Samsung Exynos Auto](https://semiconductor.samsung.com/processor/) - Samsung automotive-tier silicon, ~200+ class depending on tier. Select OEM programs.
-- [Ambarella CV3](https://www.ambarella.com/products/) - Ambarella perception SoCs, tens of TOPS class. Multi-camera automotive and edge vision.
+- [NVIDIA DRIVE Thor](https://developer.nvidia.com/drive) - NVIDIA automotive SoC, ~1000 INT8 TOPS (NVIDIA-quoted) / ~2000 FP4-class (vendor framing). Targets cockpit-plus-AD fusion on a single chip; do not equate INT8 and FP4 TOPS figures.
+- [Qualcomm Snapdragon Ride / Flex](https://www.qualcomm.com/products/automotive) - Qualcomm automotive platforms, hundreds to 1000+ TOPS depending on SKU. Ride targets ADAS/AD; Flex targets cockpit. SA8155P / SA8255P powers the comma 3X device running [openpilot](https://github.com/commaai/openpilot), a 300+ vehicle L2+ open-source deployment.
+- [Texas Instruments TDA4VM / TDA4VH (Jacinto 7)](https://www.ti.com/product/TDA4VM) - TI ADAS SoC, 8–32 TOPS class. Designed for L2+ surround-view, sensor fusion, and radar processing; widely deployed in automotive camera and domain ECUs.
+- [Renesas R-Car V4H / V4M](https://www.renesas.com/en/products/automotive-products/automotive-system-chips-socs) - Renesas ADAS SoC, ~32 TOPS CV engine class. Common in Tier-1 camera and domain modules in Japan and Europe.
+- [Mobileye EyeQ Ultra](https://www.mobileye.com/technology/) - Intel / Mobileye vision SoC, ~500+ TOPS class. Purpose-built for end-to-end vision; EyeQ chips deployed in tens of millions of vehicles.
+- [Hailo-10H](https://hailo.ai/products/ai-accelerators/hailo-10h-ai-accelerator/) - Hailo automotive-grade vision co-processor, ~40 TOPS. Paired alongside a domain controller SoC for perception offload.
+- [Samsung Exynos Auto V920](https://semiconductor.samsung.com/processor/) - Samsung automotive SoC, ~88 TOPS class. Cockpit and ADAS tier; selected for BMW and Hyundai vehicle programs.
+- [Ambarella CV3-AD](https://www.ambarella.com/products/) - Ambarella central-domain ADAS SoC, ~400+ TOPS class. Multi-camera perception and sensor fusion targeting L2+/L3 systems.
 
-When reading marketing sheets, clarify INT8 versus FP8 or FP4, single versus dual chip, and driving versus cockpit domain.
+When reading marketing sheets, clarify INT8 versus FP8 or FP4, single versus dual chip, and AD versus cockpit domain.
 
 ### Industrial & robotics
 
-- [NVIDIA Jetson AGX Orin / Jetson Thor modules](https://developer.nvidia.com/embedded/jetson-modules) - NVIDIA edge modules, ~275 INT8 TOPS on AGX Orin 64 GB up to ~1000-class on Thor SKUs. Robotics, AMR, and medical edge; always match the module datasheet.
-- [Qualcomm Robotics platforms](https://www.qualcomm.com/products/iot) - Qualcomm IoT and robotics SoCs, 50+ class. Drones, AMRs, and connected industrial machines.
-- [AMD Versal AI Edge](https://www.amd.com/en/products/adaptive-socs-and-fpgas/versal.html) - AMD adaptive SoC, 100+ class depending on series. FPGA plus AI engine for industrial and defense flexibility.
-- [Axelera AI Metis](https://www.axelera.ai/) - Axelera AI platform, ~200+ TOPS class. High-throughput industrial vision.
-- [SiMa.ai MLSoC](https://sima.ai/) - SiMa.ai vision inference silicon, 50+ class. Low-power embedded vision.
+- [NVIDIA Jetson AGX Orin / Jetson Thor modules](https://developer.nvidia.com/embedded/jetson-modules) - NVIDIA edge modules, ~275 INT8 TOPS on AGX Orin 64 GB up to ~1000-class on Thor SKUs. Standard platform for AMRs, surgical robots, and industrial inspection; always match the module datasheet.
+- [Qualcomm Robotics RB series (QCS families)](https://www.qualcomm.com/products/iot) - Qualcomm IoT and robotics SoCs, 50+ TOPS class. Drones, AMRs, and connected industrial machines; active ROS 2 and PX4 flight-controller support.
+- [Texas Instruments AM62A / AM67A](https://www.ti.com/product/AM62A3) - TI industrial edge AI SoC, 1–4 TOPS class. Low-power vision for industrial cameras, AGVs, and building automation; paired with TIDL runtime.
+- [AMD Versal AI Edge](https://www.amd.com/en/products/adaptive-socs-and-fpgas/versal.html) - AMD adaptive SoC, 100+ TOPS class depending on series. FPGA + AI engine for industrial inspection, defense, and reconfigurable edge inference.
+- [Axelera AI Metis](https://www.axelera.ai/) - Axelera AI platform, ~214 INT8 TOPS. High-throughput industrial vision on M.2 and PCIe; Voyager SDK targets ONNX and PyTorch models.
+- [SiMa.ai MLSoC](https://sima.ai/) - SiMa.ai vision inference silicon, 50+ TOPS class. Low-power embedded vision for factory inspection and robotics payloads.
+- [Renesas RZ/V2L (DRP-AI)](https://www.renesas.com/en/products/microcontrollers-microprocessors/rz-mpus) - Renesas edge AI MPU, ~1 TOPS DRP-AI class. Industrial vision and HMI applications in smart-factory and AGV endpoints.
 
 Bandwidth and compiler support often limit real throughput before peak TOPS.
 
 ### Ultra-low-power NPUs & IoT ASICs
 
-- [Google Edge TPU (embedded modules)](https://developers.google.com/coral) - Google, ~4 INT8 TOPS. Small modules; system power depends on board and duty cycle.
-- [Arm Ethos-U](https://developer.arm.com/Processors/Ethos-U) - Arm licensed NPU for MCUs, ~0.5-4 TOPS class. Energy per inference matters more than peak TOPS.
-- [Kneron KL730](https://www.kneron.com/) - Kneron edge NPU, few TOPS class. TinyML and smart-camera nodes.
-- [Synaptics Astra SL1680](https://www.synaptics.com/) - Synaptics embedded platform, ~12 TOPS class. MCU plus NPU integration.
+- [Syntiant NDP120 / NDP200](https://www.syntiant.com/ndp120) - Syntiant Neural Decision Processor, <1 mW active inference. Purpose-built for always-on audio (wake word, VAD, keyword spotting) and tiny-vision; sub-milliwatt operation enables coin-cell and energy-harvesting designs.
+- [Arm Ethos-U55 / U65](https://developer.arm.com/Processors/Ethos-U) - Arm NPU licensed for Cortex-M MCUs, 0.5–4 TOPS class. SRAM budget and operator coverage matter more than peak TOPS; paired with TFLM and CMSIS-NN.
+- [STM32 + X-CUBE-AI](https://www.st.com/en/development-tools/x-cube-ai.html) - STMicroelectronics toolkit that converts Keras / ONNX / TFLite to optimized C for STM32 MCUs. Most widely deployed TinyML toolchain on bare-metal Cortex-M devices.
+- [Nordic nRF54H20](https://www.nordicsemi.com/Products/nRF54H20) - Nordic Semiconductor multi-core SoC with BLE / Wi-Fi and ML-capable DSP. Low-power sensor node for gesture, audio, and vital-sign inference at the edge.
+- [Google Edge TPU (embedded modules)](https://developers.google.com/coral) - Google, ~4 INT8 TOPS. PCB-mounted module; system power depends on host board and duty cycle.
+- [Kneron KL730](https://www.kneron.com/) - Kneron edge NPU, few TOPS class. TinyML and smart-camera nodes with USB and SPI interfaces.
+- [Synaptics Astra SL1680](https://www.synaptics.com/) - Synaptics embedded platform, ~12 TOPS class. MCU plus NPU for voice and vision endpoint integration.
 
-For wake word, VAD, and tiny vision, SRAM, utilization, and duty cycle usually matter more than peak TOPS.
+For wake word, VAD, and tiny-vision workloads, SRAM size, operator coverage, and duty cycle matter more than peak TOPS.
 
 ### Open-source projects by platform
 
@@ -195,28 +205,41 @@ Representative GitHub projects that exercise each vendor stack in practice. Star
 - **Coral Dev Board / Dev Board Mini.** [google-coral/edgetpu](https://github.com/google-coral/edgetpu) - Same Edge TPU stack as the modules above; Mendel-era board bring-up and tests live alongside the runtime sources.
 - **Orange Pi 5 (Rockchip RK3588 NPU).** [airockchip/rknn_model_zoo](https://github.com/airockchip/rknn_model_zoo) - RKNN model zoo and deployment examples for Rockchip NPU boards including Orange Pi 5.
 - **BeagleBone AI-64 (TI Jacinto / TIDL).** [TexasInstruments/edgeai-tidl-tools](https://github.com/TexasInstruments/edgeai-tidl-tools) - Edge AI ModelZoo and tools for TI deep-learning accelerators on SoCs used on BeagleBone AI-64.
+- **Raspberry Pi 5 + Hailo — real-world NVR deployment.** [blakeblackshear/frigate](https://github.com/blakeblackshear/frigate) - NVR with always-on object detection for Home Assistant; supports Coral Edge TPU and Hailo-8/8L natively. One of the most widely deployed real-world uses of M.2 AI accelerators on maker boards, with tens of thousands of active home installations. [hailo-ai/hailo-rpi5-examples](https://github.com/hailo-ai/hailo-rpi5-examples) - Official Hailo Raspberry Pi 5 reference pipelines.
 
-#### Automotive and ADAS (public SDK cousins)
+#### Automotive and ADAS — open-source deployments and SDK cousins
 
-- **NVIDIA DRIVE (Thor class and stack family).** OEM DriveOS application code is usually closed; public cousins include [NVIDIA-AI-IOT/deepstream_python_apps](https://github.com/NVIDIA-AI-IOT/deepstream_python_apps) - Multi-camera DeepStream samples in Python, and [NVIDIA-ISAAC-ROS/isaac_ros_common](https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common) - Isaac ROS build infrastructure used in many robotics and perception stacks that share tooling with NVIDIA's automotive SDK lineage.
-- **Qualcomm Snapdragon Ride / Flex and automotive Linux.** [quic/sample-apps-for-qualcomm-linux](https://github.com/quic/sample-apps-for-qualcomm-linux) - Sample apps and models for Qualcomm Linux platforms used in automotive and industrial lines; not a full Ride stack drop but a maintained public entry point.
-- **Hailo-10H (in-vehicle and edge).** [hailo-ai/hailo_model_zoo](https://github.com/hailo-ai/hailo_model_zoo) - Same HailoRT and model-zoo workflow as Hailo-8 family accelerators; automotive integrations usually wrap these pipelines in OEM middleware.
-- **Mobileye EyeQ, Samsung Exynos Auto, Ambarella CV3.** Widely deployed stacks, but **application reference code is not typically published on GitHub**; development flows go through each vendor's partner SDK portals rather than a single star-count OSS repo.
+> Several of the most deployed open-source autonomy stacks run directly on the chips in this section. OEM DriveOS / Ride application code is typically closed; the projects below are the public face of automotive AI hardware in practice.
 
-#### Industrial and robotics modules
+- **openpilot (Qualcomm SA8155P / SA8255P) — production L2+ success story.** [commaai/openpilot](https://github.com/commaai/openpilot) - comma.ai's open-source ADAS suite running on Snapdragon automotive SoCs in the comma 3X device. Active L2 autonomy on 300+ car makes with hundreds of thousands of real-world users. The full model, training pipeline, and SNPE/QNN inference stack are public — the clearest open example of end-to-end production AI on Qualcomm silicon.
+- **Apollo (NVIDIA DRIVE / x86 + GPU).** [ApolloAuto/apollo](https://github.com/ApolloAuto/apollo) - Baidu's open-source autonomous driving platform targeting NVIDIA DRIVE hardware and GPU workstations. Large model and sensor zoo; widely used in Chinese robotaxi and L4 R&D programs.
+- **Autoware (NVIDIA Jetson / x86, ROS 2).** [autowarefoundation/autoware](https://github.com/autowarefoundation/autoware) - Leading open-source ROS 2 AV stack; runs on Jetson Orin AGX and x86 NVIDIA hosts. Used in open-road L4 research programs worldwide.
+- **NVIDIA DRIVE / Isaac ROS cousins.** [NVIDIA-AI-IOT/deepstream_python_apps](https://github.com/NVIDIA-AI-IOT/deepstream_python_apps) - Multi-camera DeepStream pipelines in Python. [NVIDIA-ISAAC-ROS/isaac_ros_common](https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common) - Isaac ROS build infra shared by robotics and automotive perception stacks.
+- **Qualcomm automotive Linux samples.** [quic/sample-apps-for-qualcomm-linux](https://github.com/quic/sample-apps-for-qualcomm-linux) - Object detection and classification samples for Qualcomm Linux EVKs; closest maintained public entry point to Ride/Flex platform development.
+- **TI Jacinto / TDA4VM cousins.** [TexasInstruments/edgeai-tidl-tools](https://github.com/TexasInstruments/edgeai-tidl-tools) - TI deep-learning runtime and model zoo for Jacinto SoC families; same tools underpin production automotive camera ECUs.
+- **Hailo-10H (in-vehicle).** [hailo-ai/hailo_model_zoo](https://github.com/hailo-ai/hailo_model_zoo) - Same HailoRT and model-zoo workflow as Hailo-8 family; automotive integrations wrap these pipelines in OEM middleware.
+- **Mobileye, Samsung Exynos Auto, Ambarella, Renesas R-Car.** Application reference code is **not typically public**; development goes through each vendor's partner SDK portal.
 
-- **NVIDIA Jetson AGX Orin / Jetson Thor.** [NVIDIA-AI-IOT/ros2_deepstream](https://github.com/NVIDIA-AI-IOT/ros2_deepstream) - ROS 2 integration examples for DeepStream on Jetson. [NVIDIA-ISAAC-ROS/isaac_ros_common](https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common) - Docker-based build and test infrastructure shared by Isaac ROS perception stacks on Jetson and x86.
-- **Qualcomm robotics SoCs (RB / QCS families).** [qualcomm-qrb-ros/qrb_ros_transport](https://github.com/qualcomm-qrb-ros/qrb_ros_transport) - Zero-copy ROS 2 transport tuned for Qualcomm robotics boards. [quic/sample-apps-for-qualcomm-linux](https://github.com/quic/sample-apps-for-qualcomm-linux) - Object detection and classification samples on Qualcomm Linux EVKs used in robotics kits.
-- **AMD Versal AI Edge (Vitis AI).** [Xilinx/Vitis-AI](https://github.com/Xilinx/Vitis-AI) - Models, compiler, and runtime targeting AMD adaptive SoCs and Alveo accelerators; primary OSS path for Versal AI Engine workflows.
+#### Industrial and robotics — open-source stacks and hardware
+
+- **ROS 2 Navigation — hardware-agnostic, widely runs on Jetson and x86.** [ros-navigation/navigation2](https://github.com/ros-navigation/navigation2) - Nav2; the standard mobile robot navigation stack for AMRs, used on Jetson Orin and x86 NVIDIA hosts. [huggingface/lerobot](https://github.com/huggingface/lerobot) - HuggingFace robot learning library for imitation and RL; runs on Jetson and x86 GPU platforms.
+- **PX4 / ArduPilot (Qualcomm RB series + bare-metal).** [PX4/PX4-Autopilot](https://github.com/PX4/PX4-Autopilot) - Open-source UAV flight controller; Qualcomm RB5 and RB3 are supported companion-compute targets. [ArduPilot/ardupilot](https://github.com/ArduPilot/ardupilot) - Alternative UAV stack running from bare MCUs through Jetson-class companions.
+- **NVIDIA Jetson AGX Orin / Thor — Isaac ROS.** [NVIDIA-ISAAC-ROS/isaac_ros_common](https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_common) - Docker-based Isaac ROS build infra; base for all Isaac perception packages. [NVIDIA-ISAAC-ROS/isaac_ros_object_detection](https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_object_detection) - GPU-accelerated object detection on Jetson for industrial and warehouse robotics. [NVIDIA-AI-IOT/ros2_deepstream](https://github.com/NVIDIA-AI-IOT/ros2_deepstream) - Multi-stream DeepStream pipelines under ROS 2.
+- **Qualcomm robotics SoCs (RB / QCS families).** [qualcomm-qrb-ros/qrb_ros_transport](https://github.com/qualcomm-qrb-ros/qrb_ros_transport) - Zero-copy ROS 2 transport for Qualcomm robotics boards. [quic/sample-apps-for-qualcomm-linux](https://github.com/quic/sample-apps-for-qualcomm-linux) - Detection and classification samples on Qualcomm Linux EVKs.
+- **TI AM62A / Jacinto (TIDL).** [TexasInstruments/edgeai-tidl-tools](https://github.com/TexasInstruments/edgeai-tidl-tools) - TI deep-learning runtime and model zoo for AM62A and Jacinto SoC families; covers factory automation and AGV vision use cases.
+- **AMD Versal AI Edge (Vitis AI).** [Xilinx/Vitis-AI](https://github.com/Xilinx/Vitis-AI) - Models, compiler, and runtime for AMD adaptive SoCs and Alveo cards; primary OSS path for Versal AI Engine workflows.
 - **Axelera Metis.** [axelera-ai-hub/voyager-sdk](https://github.com/axelera-ai-hub/voyager-sdk) - Official Voyager SDK, samples, and model zoo for Metis hardware.
-- **SiMa.ai MLSoC.** [SiMa-ai/models](https://github.com/SiMa-ai/models) - ONNX and PyTorch models with scripts aimed at SiMa.ai compilation and deployment flows.
+- **SiMa.ai MLSoC.** [SiMa-ai/models](https://github.com/SiMa-ai/models) - ONNX and PyTorch models with SiMa.ai deployment scripts.
 
 #### Ultra-low-power NPUs and IoT
 
-- **Google Edge TPU (embedded).** [google-coral/edgetpu](https://github.com/google-coral/edgetpu) - Same runtime as Coral modules; typical for USB and PCIe Edge TPU deployments.
-- **Arm Ethos-U.** [tensorflow/tflite-micro](https://github.com/tensorflow/tflite-micro) - TensorFlow Lite Micro with Ethos-U integration paths. [ARM-software/ML-examples](https://github.com/ARM-software/ML-examples) - Training and deployment notebooks including Ethos-U Corstone-300 flows.
-- **Kneron KL730 and related.** [kneron/ONNX_Convertor](https://github.com/kneron/ONNX_Convertor) - ONNX conversion and optimization scripts maintained for Kneron hardware toolchains.
-- **Synaptics Astra (e.g. SL1680).** [synaptics-synap/examples](https://github.com/synaptics-synap/examples) - Official example apps for vision, speech, and LLM-style demos on Synaptics Astra-class kits.
+- **Benchmarks (hardware-agnostic).** [mlcommons/tiny](https://github.com/mlcommons/tiny) - MLCommons TinyMLperf; standardized benchmarks for keyword spotting, image classification, visual wake words, and anomaly detection across MCU-class hardware.
+- **Arm Ethos-U / Cortex-M (TFLM + CMSIS-NN).** [tensorflow/tflite-micro](https://github.com/tensorflow/tflite-micro) - TFLite Micro with Ethos-U kernels; the primary inference engine for Arm MCU AI. [ARM-software/ML-examples](https://github.com/ARM-software/ML-examples) - Deployment notebooks including Ethos-U55 Corstone-300 virtual-platform flows.
+- **STM32 + X-CUBE-AI.** [STMicroelectronics/stm32ai-modelzoo](https://github.com/STMicroelectronics/stm32ai-modelzoo) - Official STM32 AI model zoo; covers image classification, object detection, and keyword spotting for Cortex-M devices.
+- **Cross-platform MCU / NPU (Edge Impulse).** [edgeimpulse/example-standalone-inferencing](https://github.com/edgeimpulse/example-standalone-inferencing) - Standalone C++ inference from Edge Impulse Studio; runs on Arduino Nano 33 BLE, STM32, nRF, Syntiant NDP, and other targets without an OS.
+- **Google Edge TPU (embedded).** [google-coral/edgetpu](https://github.com/google-coral/edgetpu) - Same runtime as Coral dev boards; used for soldered-down module deployments.
+- **Kneron KL730 and related.** [kneron/ONNX_Convertor](https://github.com/kneron/ONNX_Convertor) - ONNX conversion and optimization scripts for Kneron hardware toolchains.
+- **Synaptics Astra (SL1680).** [synaptics-synap/examples](https://github.com/synaptics-synap/examples) - Official demos for vision, speech, and LLM-style inference on Astra-class kits.
 
 ### Technical trends (2026)
 
