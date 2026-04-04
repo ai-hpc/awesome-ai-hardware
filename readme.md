@@ -11,6 +11,8 @@
   - [Edge & Embedded](#edge--embedded)
 - [Edge AI Chip Landscape (2026)](#edge-ai-chip-landscape-2026)
   - [Consumer & mobile](#consumer--mobile)
+  - [Laptop-class NPUs](#laptop-class-npus)
+  - [USB & M.2 Accelerators](#usb--m2-accelerators)
   - [Small boards & maker / prototyping](#small-boards--maker--prototyping)
   - [Automotive & transportation](#automotive--transportation)
   - [Industrial & robotics](#industrial--robotics)
@@ -103,37 +105,49 @@ Lines are sorted by **vendor AI TOPS** (claimed or assumed; see snapshot table a
 | MediaTek Dimensity 9300 | ~35 | **Assumed** class below **NPU 890** **~50**; APU 790 |
 | Samsung Exynos 2400 | ~32 | NPU |
 
-**Laptop-class NPUs (not the phone SoC table above)**
-
-- [Intel Core Ultra (Meteor Lake through Arrow Lake)](https://www.intel.com/content/www/us/en/products/details/processors/core-ultra.html) - Intel AI Boost NPU; compare on AI-Benchmark [desktop / deep learning](https://ai-benchmark.com/ranking_deeplearning.html) or OpenVINO workloads, not the mobile SoC list.
-- [Snapdragon X Elite / X Plus](https://www.qualcomm.com/products/laptops-and-tablets/snapdragon-x-series) - 45 NPU TOPS (Qualcomm-stated for Hexagon NPU on X series). Use Windows on Snapdragon AI-Benchmark entries or vendor ONNX / QNN tests for apples-to-apples numbers.
-
-**USB / M.2 AI accelerator (not an application processor)**
-
-- [Coral Edge TPU (M.2 / USB / PCIe)](https://coral.ai/products/) - Google add-in, ~4 INT8 TOPS peak (module docs); see [IoT ranking](https://ai-benchmark.com/ranking_IoT.html) on AI-Benchmark for class devices, not mobile SoC table.
-
 Vendor TOPS, *AI-Benchmark*, and *Geekbench AI* scores measure different things; use the same suite when comparing SKUs.
+
+
+### Laptop-class NPUs
+
+> Laptop NPU TOPS are INT8 peak on the NPU block only unless stated; real throughput depends on DRAM bandwidth, compiler support, and driver maturity. Cross-vendor comparisons require the same workload and framework.
+
+- [Intel Core Ultra 100/200 (Meteor Lake / Arrow Lake)](https://www.intel.com/content/www/us/en/products/details/processors/core-ultra.html) - Intel AI Boost NPU, ~11 TOPS on Meteor Lake and ~13 TOPS on Arrow Lake (INT8, NPU-only; Intel-stated). Target via OpenVINO or ONNX Runtime with the OpenVINO execution provider.
+- [Intel Core Ultra 200V (Lunar Lake)](https://www.intel.com/content/www/us/en/products/details/processors/core-ultra.html) - Intel AI Boost NPU 2, ~48 TOPS (NPU-only; Intel-stated). Ships in thin-and-light Copilot+ PC designs.
+- [AMD Ryzen AI 300 / AI Max (Strix Point, XDNA 2)](https://www.amd.com/en/products/processors/laptop.html) - AMD NPU XDNA 2, ~50 TOPS. First AMD part to reach Copilot+ PC tier; use ONNX Runtime with the DirectML or AMD execution provider.
+- [AMD Ryzen AI 7040 / 8040 (Phoenix / Hawk Point, XDNA)](https://www.amd.com/en/products/processors/laptop.html) - AMD NPU XDNA, ~16 TOPS. Earlier Ryzen AI generation; improving coverage via ROCm and ONNX Runtime XDNA paths.
+- [Qualcomm Snapdragon X Elite / X Plus](https://www.qualcomm.com/products/mobile-compute) - Hexagon NPU, 45 TOPS (Qualcomm-stated). Windows on Snapdragon Copilot+ PC; use vendor QNN tests or WoS ONNX Runtime entries for comparable numbers.
+- [Apple M-series Neural Engine (M3 / M4)](https://developer.apple.com/documentation/coreml) - 16-core Neural Engine, ~15.8 TOPS on M3 and ~38 TOPS on M4 (Apple-stated). Accessible via Core ML and mlx; not exposed via ONNX Runtime or DirectML.
+
+
+### USB & M.2 Accelerators
+
+> These cards add dedicated INT8 inference capacity to any host with USB 3 or M.2/PCIe. Peak TOPS is for the accelerator die only; USB overhead and host memory transfers significantly reduce effective throughput.
+
+- [Hailo-8 (M.2 / mini-PCIe / USB)](https://hailo.ai/products/ai-accelerators/hailo-8-ai-accelerator/) - Hailo, 26 INT8 TOPS. Popular M.2 form factor on Raspberry Pi 5 AI Kit; models compiled via Hailo Dataflow Compiler from ONNX or TFLite.
+- [Hailo-8L (M.2)](https://hailo.ai/products/ai-accelerators/) - Hailo, 13 INT8 TOPS. Lower-power variant of Hailo-8; same compiler toolchain, suited for tighter power budgets.
+- [Coral Edge TPU (USB / M.2 / PCIe)](https://developers.google.com/coral) - Google, ~4 INT8 TOPS (module docs). Pairs with LiteRT models compiled for the Edge TPU; in maintenance mode but runtime still updated.
+- [Luxonis OAK-D (USB)](https://shop.luxonis.com/products/oak-d) - Luxonis, ~4 TOPS (Intel Myriad X). USB depth-stereo AI camera; runs inference on-device via the DepthAI SDK.
+- [Kneron KL720 (USB / M.2)](https://www.kneron.com/) - Kneron, ~0.5–1 TOPS INT8. Ultra-low-power USB and M.2 module for always-on TinyML and smart-camera nodes.
+
 
 ### Small boards & maker / prototyping
 
 - [NVIDIA Jetson Orin Nano / NX](https://developer.nvidia.com/embedded/jetson-orin) - NVIDIA modules, ~20-100 TOPS class. Common robotics and vision proofs of concept; effective performance depends on power mode.
 - [Qualcomm Dragonwing / robotics dev kits](https://www.qualcomm.com/products/iot) - IoT and robotics kits (e.g. Dragonwing QCS6490-class) with integrated Qualcomm AI Engine for embedded Linux vision and robotics prototypes.
-- [Hailo-8 / Hailo-8L](https://hailo.ai/products/hailo-8-ai-accelerator/) - Hailo M.2 and USB accelerators, ~13-26 TOPS class. Popular gumstick and module form factors.
+- [Hailo-8 / Hailo-8L](https://hailo.ai/products/ai-accelerators/hailo-8-ai-accelerator/) - Hailo M.2 and USB accelerators, ~13-26 TOPS class. Popular gumstick and module form factors.
 - [Coral Dev Board / Dev Board Mini](https://coral.ai/products/dev-board/) - Google boards with Edge TPU, ~4 INT8 TOPS. Small-scale LiteRT deployment and USB or M.2 accelerator ecosystem.
 - [Orange Pi 5 (RK3588 / S)](http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/details/Orange-Pi-5.html) - Rockchip RK3588 SBC, ~6 TOPS class NPU. Budget board with a usable integrated NPU.
-- [BeagleBone AI-64](https://beagleboard.org/ai-64) - BeagleBoard.org SBC, ~8 TOPS class. Open hardware-friendly TI edge-AI SoC.
-
-- [LiteRT](https://ai.google.dev/edge/litert) - Google's edge inference runtime; pairs with MediaPipe and on-device Gemini paths and often reflects toolchain choice as much as chip vendor across NPUs.
-- [MediaPipe](https://ai.google.dev/edge/mediapipe/solutions/guide) - Google's cross-platform ML pipelines for vision, audio, and more on edge devices.
+- [BeagleBone AI-64](https://www.beagleboard.org/ai-64) - BeagleBoard.org SBC, ~8 TOPS class. Open hardware-friendly TI edge-AI SoC.
 
 ### Automotive & transportation
 
 - [NVIDIA DRIVE Thor](https://developer.nvidia.com/drive) - NVIDIA automotive SoC, ~1000 INT8 TOPS (NVIDIA-quoted) and ~2000 FP4-class effective throughput (vendor framing). Do not equate INT8 TOPS and FP4 figures without reading definitions.
 - [Qualcomm Snapdragon Ride / Flex](https://www.qualcomm.com/products/automotive) - Qualcomm automotive platforms, hundreds to 1000+ TOPS class depending on SKU. Scalable ADAS through higher automation tiers.
-- [Hailo-10H](https://hailo.ai/products/hailo-10h-ai-accelerator/) - Hailo automotive and edge accelerator, ~40 TOPS class. In-vehicle and edge vision.
-- [Mobileye EyeQ (Ultra+ class)](https://www.mobileye.com/products/eyeq-chip/) - Intel / Mobileye vision SoC, ~500+ class. Vision-centric stacks; definitions vary by generation.
+- [Hailo-10H](https://hailo.ai/products/ai-accelerators/hailo-10h-ai-accelerator/) - Hailo automotive and edge accelerator, ~40 TOPS class. In-vehicle and edge vision.
+- [Mobileye EyeQ (Ultra+ class)](https://www.mobileye.com/technology/) - Intel / Mobileye vision SoC, ~500+ class. Vision-centric stacks; definitions vary by generation.
 - [Samsung Exynos Auto](https://semiconductor.samsung.com/processor/) - Samsung automotive-tier silicon, ~200+ class depending on tier. Select OEM programs.
-- [Ambarella CV3](https://www.ambarella.com/product/cv3-ai-domain-controller/) - Ambarella perception SoCs, tens of TOPS class. Multi-camera automotive and edge vision.
+- [Ambarella CV3](https://www.ambarella.com/products/) - Ambarella perception SoCs, tens of TOPS class. Multi-camera automotive and edge vision.
 
 When reading marketing sheets, clarify INT8 versus FP8 or FP4, single versus dual chip, and driving versus cockpit domain.
 
@@ -149,11 +163,10 @@ Bandwidth and compiler support often limit real throughput before peak TOPS.
 
 ### Ultra-low-power NPUs & IoT ASICs
 
-- [Google Edge TPU (embedded modules)](https://coral.ai/products/) - Google, ~4 INT8 TOPS. Small modules; system power depends on board and duty cycle.
+- [Google Edge TPU (embedded modules)](https://developers.google.com/coral) - Google, ~4 INT8 TOPS. Small modules; system power depends on board and duty cycle.
 - [Arm Ethos-U](https://developer.arm.com/Processors/Ethos-U) - Arm licensed NPU for MCUs, ~0.5-4 TOPS class. Energy per inference matters more than peak TOPS.
-- [Kneron KL730](https://www.kneron.com/) - Kneron edge NPU, few TOPS class. TinyML and smart-camera nodes; Maix boards are a common hobby ecosystem.
-- [Synaptics Astra SL1680](https://www.synaptics.com/products/embedded-solutions/astra-sl1680) - Synaptics embedded platform, ~12 TOPS class. MCU plus NPU integration.
-- [GrAI VIP](https://www.graimatterlabs.ai/) - GrAI Matter Labs, 4-14 TOPS class. Event-driven and sparse inference; compare assumptions to frame-based CNN accelerators.
+- [Kneron KL730](https://www.kneron.com/) - Kneron edge NPU, few TOPS class. TinyML and smart-camera nodes.
+- [Synaptics Astra SL1680](https://www.synaptics.com/) - Synaptics embedded platform, ~12 TOPS class. MCU plus NPU integration.
 
 For wake word, VAD, and tiny vision, SRAM, utilization, and duty cycle usually matter more than peak TOPS.
 
@@ -171,6 +184,7 @@ Representative GitHub projects that exercise each vendor stack in practice. Star
 - **Samsung Exynos (mobile).** [android/nn-samples](https://github.com/android/nn-samples) - Android NNAPI samples that run on many vendor drivers, including typical Exynos retail devices (not Exynos-specific, but the usual OSS entry point).
 - **Google Tensor (Pixel).** [google-ai-edge/mediapipe](https://github.com/google-ai-edge/mediapipe) - Production-style graphs for vision, audio, and genai-style demos on Android, including Pixel-first workflows. [google-ai-edge/LiteRT](https://github.com/google-ai-edge/LiteRT) - LiteRT runtime and tooling used across Google edge devices.
 - **Intel Core Ultra (CPU / GPU / NPU via OpenVINO).** [openvinotoolkit/openvino](https://github.com/openvinotoolkit/openvino) - OpenVINO toolkit, notebooks, and model zoo targeting Intel NPU, GPU, and CPU on Core Ultra class PCs.
+- **AMD Ryzen AI (XDNA / XDNA 2 NPU).** [amd/RyzenAI-SW](https://github.com/amd/RyzenAI-SW) - Official AMD Ryzen AI software stack, model examples, and deployment guide for XDNA and XDNA 2 NPU on Ryzen AI series laptops.
 - **Coral Edge TPU (USB / M.2 / PCIe).** [google-coral/edgetpu](https://github.com/google-coral/edgetpu) - Edge TPU userspace, tests, and examples (Coral is in maintenance mode but repos remain the reference). [google-coral/tflite](https://github.com/google-coral/tflite) - TensorFlow Lite tree with Edge TPU delegate integration.
 
 #### Small boards and maker kits
@@ -203,7 +217,6 @@ Representative GitHub projects that exercise each vendor stack in practice. Star
 - **Arm Ethos-U.** [tensorflow/tflite-micro](https://github.com/tensorflow/tflite-micro) - TensorFlow Lite Micro with Ethos-U integration paths. [ARM-software/ML-examples](https://github.com/ARM-software/ML-examples) - Training and deployment notebooks including Ethos-U Corstone-300 flows.
 - **Kneron KL730 and related.** [kneron/ONNX_Convertor](https://github.com/kneron/ONNX_Convertor) - ONNX conversion and optimization scripts maintained for Kneron hardware toolchains.
 - **Synaptics Astra (e.g. SL1680).** [synaptics-synap/examples](https://github.com/synaptics-synap/examples) - Official example apps for vision, speech, and LLM-style demos on Synaptics Astra-class kits.
-- **GrAI VIP.** GrAIFlow and board support are **primarily distributed through vendor kits and partner channels** rather than a flagship public application repository on GitHub; treat marketing repos with care and verify license and chip revision.
 
 ### Technical trends (2026)
 
