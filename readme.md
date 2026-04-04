@@ -91,23 +91,6 @@ Lines are sorted by **vendor AI TOPS** (claimed or assumed; see snapshot table a
 - [MediaTek Dimensity 9300](https://www.mediatek.com/products/smartphones/mediatek-dimensity-9300) — **APU 790**; primary launch materials emphasize tokens **/** s and model size rather than **TOPS**—this list assumes **~35 TOPS** as a sub-**NPU 890** (**~50**) class placeholder (assumed only; see blockquote). Reported notes: Still-capable prior flagship tier; oldest Dimensity in this set versus **9300+** / **9400** / **9500**. *AI-Benchmark: AI **6244**, INT8 CNN **635**, INT8 transformer **3014**, FP16 CNN **847**, FP16 transformer **1282**; table year **2023**. Geekbench AI GPU: SP **1026**, half **1234**, quantized **1251**.* **Oppo Find X7**.
 - [Samsung Exynos 2400](https://semiconductor.samsung.com/processor/mobile-processor/exynos-2400/) — **Integrated NPU**; Samsung cites up to **~32 TOPS** NPU throughput, **~14.7×** AI uplift vs **Exynos 2200**, and a **17K MAC** **2-GNPU + 2-SNPU** layout aimed at generative **/** on-device AI (vendor TOPS—see blockquote above). Typical positioning: real-time speech, text-to-image, vision, enhancement. **Xclipse 940 GPU** (*Geekbench AI* row uses GPU path). Reported notes: Regional **Galaxy S24** variant; in this list’s *AI-Benchmark* snapshot it still sits well below contemporary Snapdragon flagships. *AI-Benchmark: AI **652**, INT8 CNN **55**, INT8 transformer **160**, FP16 CNN **183**, FP16 transformer **64**; table year **2023**. Geekbench AI GPU: SP **1457**, half **2007**, quantized **1731**.* **Samsung Galaxy S24** (Exynos SKU).
 
-**Vendor AI TOPS snapshot** (same chips and order as bullets; vendor **/** press where stated, **assumed** where marked—see blockquote—not *AI-Benchmark* or *Geekbench AI*):
-
-| SoC | Typical claimed TOPS | Notes |
-| --- | --- | --- |
-| Apple A19 Pro | ~160 | Neural Engine |
-| Snapdragon 8 Elite Gen 5 | ~100 | Press / suite-dependent summaries |
-| MediaTek Dimensity 9500 | ~100 | NPU 990 |
-| Snapdragon 8 Elite | ~90 | **Assumed** between **~73** (**8 Gen 3**) and **~100** (**8 Elite Gen 5**); not a Qualcomm rollup |
-| Snapdragon 8 Gen 3 | ~73 | Qualcomm **AI Engine** |
-| Snapdragon 8s Gen 4 | ~60 | Common in spec aggregators; Qualcomm brief omits **TOPS** |
-| MediaTek Dimensity 9400+ | ~50 | NPU 890 theoretical |
-| MediaTek Dimensity 9400 | ~50 | NPU 890 theoretical |
-| Google Tensor G4 | ~45 | Pixel **/** Gemini Nano framing |
-| MediaTek Dimensity 9300+ | ~39 | **Assumed** (~**10%** over **9300**; APU 790) |
-| MediaTek Dimensity 9300 | ~35 | **Assumed** class below **NPU 890** **~50**; APU 790 |
-| Samsung Exynos 2400 | ~32 | NPU |
-
 Vendor TOPS, *AI-Benchmark*, and *Geekbench AI* scores measure different things; use the same suite when comparing SKUs.
 
 
