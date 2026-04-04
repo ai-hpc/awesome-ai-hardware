@@ -26,6 +26,7 @@
   - [Technical trends (2026)](#technical-trends-2026)
 - [Retail & Supermarket AI](#retail--supermarket-ai)
 - [Smart Home AI](#smart-home-ai)
+- [Mobile Phone AI](#mobile-phone-ai)
 - [Compilers & Runtimes](#compilers--runtimes)
 - [Benchmarks & Profiling](#benchmarks--profiling)
 - [Tutorials & Courses](#tutorials--courses)
@@ -319,6 +320,39 @@ Representative GitHub projects that exercise each vendor stack in practice. Star
 ### Protocol & Device Integration
 
 - [Zigbee2MQTT](https://github.com/Koenkk/zigbee2mqtt) ★15k — Bridges 3000+ Zigbee devices (sensors, lights, locks, buttons) to MQTT without a proprietary hub; eliminates cloud dependency for the most common smart home sensor protocol.
+
+
+## Mobile Phone AI
+
+> On-device inference on phones runs against tight memory, power, and thermal limits — frameworks below are designed for ARM CPUs, mobile GPUs (Adreno, Mali), DSPs, and dedicated NPUs (Apple Neural Engine, Hexagon, Dimensity APU). All projects run inference locally with no cloud dependency.
+
+### Mobile Inference Engines
+
+- [ncnn](https://github.com/Tencent/ncnn) ★23k — Tencent's neural network inference framework designed from the ground up for mobile ARM/Vulkan; used in WeChat, QQ, and production apps serving billions of users. No dependencies, runs on Android and iOS.
+- [MNN](https://github.com/alibaba/MNN) ★14.7k — Alibaba's battle-tested mobile inference engine; supports Android/iOS and on-device LLMs. Powers Taobao, Tmall, and Youku AI features in production.
+- [Tencent TNN](https://github.com/Tencent/TNN) ★4.6k — Tencent's mobile-first inference framework deployed in QQ, Weishi, and Pitu; optimized for iOS and Android with quantization and heterogeneous compute support.
+- [Xiaomi MACE](https://github.com/XiaoMi/mace) ★5k — Xiaomi's deep learning inference framework optimized for mobile heterogeneous compute (CPU/GPU/DSP/APU); tuned for Snapdragon and MediaTek SoCs.
+- [ExecuTorch](https://github.com/pytorch/executorch) ★4.5k — PyTorch's official on-device inference runtime for Android, iOS, and embedded; includes documented backends for Apple Neural Engine, Qualcomm QNN, MediaTek, and Arm Ethos.
+- [LiteRT](https://github.com/google-ai-edge/LiteRT) ★2k — Google's successor to TensorFlow Lite; high-performance on-device inference on Android and iOS with NNAPI, CoreML, and GPU delegate backends.
+
+### LLM on Phone
+
+- [llama.cpp](https://github.com/ggerganov/llama.cpp) ★101k — Pure C/C++ quantized LLM inference; runs LLaMA, Mistral, Phi, and Gemma on Android and iOS CPU/GPU with no runtime dependencies. The foundation of most mobile LLM apps.
+- [mlc-llm](https://github.com/mlc-ai/mlc-llm) ★22k — Compiles LLMs to native Android and iOS packages via ML compilation (TVM); achieves GPU-accelerated token generation on Snapdragon Adreno and Apple Neural Engine.
+- [llamafile](https://github.com/Mozilla-Ocho/llamafile) ★24k — Packages entire LLMs as single self-contained executables that run on any device including mobile-class ARM hardware; no install, no dependencies.
+
+### Vision & Multimodal Pipelines
+
+- [MediaPipe](https://github.com/google-ai-edge/mediapipe) ★34.5k — Google's cross-platform on-device ML pipeline library; covers face detection, hand tracking, pose estimation, object detection, and on-device LLM inference for Android and iOS.
+- [ONNX Runtime](https://github.com/microsoft/onnxruntime) ★19.7k — Cross-platform ONNX inference with Android NNAPI and iOS CoreML execution providers; the portable deployment target for models trained in any framework.
+- [Candle](https://github.com/huggingface/candle) ★19.8k — Minimalist Rust ML framework; lightweight binary footprint and no Python dependency makes it suitable for mobile and WASM targets.
+- [Transformers.js](https://github.com/xenova/transformers.js) ★15.7k — Hugging Face Transformers running entirely in-browser or on-device via WASM and WebGPU; no server required; supports vision, NLP, and audio models on mobile browsers.
+
+### Apple Neural Engine
+
+- [MLX](https://github.com/ml-explore/mlx) ★25k — Apple's own array and ML framework for Apple Silicon; exploits the Neural Engine and unified memory on iPhone, iPad, and Mac; used for on-device fine-tuning and inference.
+- [coremltools](https://github.com/apple/coremltools) ★5.2k — Official Apple model conversion and compression pipeline; converts PyTorch/TensorFlow/ONNX models to Core ML format targeting the Neural Engine on iPhone and iPad.
+- [ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch) ★976 — Converts PyTorch models to LiteRT format for on-device deployment on Android Neural Engine paths and iOS.
 
 
 ## Compilers & Runtimes
