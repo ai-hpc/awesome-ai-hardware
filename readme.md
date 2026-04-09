@@ -27,6 +27,15 @@
 - [Retail & Supermarket AI](#retail--supermarket-ai)
 - [Smart Home AI](#smart-home-ai)
 - [Mobile Phone AI](#mobile-phone-ai)
+- [AI PC Offline Applications](#ai-pc-offline-applications)
+  - [Local LLM Runtimes](#local-llm-runtimes)
+  - [AI Code Editors](#ai-code-editors)
+  - [Language Learning & Pronunciation](#language-learning--pronunciation)
+  - [Productivity & Knowledge Management](#productivity--knowledge-management)
+  - [Photo & Image AI](#photo--image-ai)
+  - [Video, Audio & 3D](#video-audio--3d)
+  - [AI Generative Media](#ai-generative-media)
+  - [Speech & TTS](#speech--tts)
 - [Compilers & Runtimes](#compilers--runtimes)
 - [Benchmarks & Profiling](#benchmarks--profiling)
 - [Tutorials & Courses](#tutorials--courses)
@@ -336,6 +345,75 @@ Representative GitHub projects that exercise each vendor stack in practice. Star
 - [MLX](https://github.com/ml-explore/mlx) ★25k — Apple's own array and ML framework for Apple Silicon; exploits the Neural Engine and unified memory on iPhone, iPad, and Mac; used for on-device fine-tuning and inference.
 - [coremltools](https://github.com/apple/coremltools) ★5.2k — Official Apple model conversion and compression pipeline; converts PyTorch/TensorFlow/ONNX models to Core ML format targeting the Neural Engine on iPhone and iPad.
 - [ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch) ★976 — Converts PyTorch models to LiteRT format for on-device deployment on Android Neural Engine paths and iOS.
+
+
+## AI PC Offline Applications
+
+Open-source and offline-capable applications that run on AI PCs with NPU acceleration (Intel AI Boost, AMD XDNA / Ryzen AI, Qualcomm Snapdragon X Elite, Apple Silicon). All entries favour privacy-first, local-only operation.
+
+### Local LLM Runtimes
+
+The backbone that powers most AI PC apps below.
+
+- [Ollama](https://github.com/ollama/ollama) ★167.6k — One-command local LLM runner; supports NPU, GPU, and CPU backends; runs Llama 3, Qwen, Phi, DeepSeek, Mistral models with a single `ollama run` command.
+- [llama.cpp](https://github.com/ggml-org/llama.cpp) ★101.9k — Core GGUF inference engine used by Ollama and most local LLM apps; C/C++ with Metal, CUDA, Vulkan, and SYCL backends.
+- [LM Studio](https://lmstudio.ai/) — GUI for running local models; NPU-aware; cross-platform; free (closed-source).
+- [OpenVINO](https://github.com/openvinotoolkit/openvino) ★10.0k — Intel's toolkit for optimising and deploying AI inference; key SDK for Intel AI Boost NPU.
+- [MLX](https://github.com/ml-explore/mlx) ★25.1k — Apple's array and ML framework for Apple Silicon; targets the Neural Engine and unified memory.
+
+### AI Code Editors
+
+- [Continue](https://github.com/continuedev/continue) ★32.3k — Open-source VS Code and JetBrains plugin; tab autocomplete, chat, and codebase Q&A; full offline via Ollama.
+- [Void](https://voideditor.com/) — Open-source VS Code fork; run DeepSeek, Llama, Qwen, Mistral locally via any GGUF model.
+- [Zed](https://zed.dev/) — Open-source editor written in Rust; built-in local Zeta model and Ollama backend; Windows support since late 2025.
+- [VS Code + Ollama AI Toolkit](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio) — Microsoft extension for running local LLMs inside VS Code; Phi-4 mini on NPU.
+
+> **Best local code models:** Qwen2.5-Coder 7B (fits 16 GB RAM), DeepSeek-Coder, Phi-4 mini — ~40% latency reduction on NPU vs CPU on Copilot+ PCs.
+
+### Language Learning & Pronunciation
+
+Open-source tools for AI-powered pronunciation review. Supports English, Chinese, Spanish, and 99+ languages via Whisper.
+
+- [Anki](https://github.com/ankitects/anki) ★27.3k — Open-source spaced repetition flashcard program; 1,600+ add-ons including TTS and phoneme cards; FSRS scheduling algorithm; full offline for all languages.
+- [ai-pronunciation-trainer](https://github.com/Thiagohgl/ai-pronunciation-trainer) ★458 — Whisper-based phoneme scoring with per-word feedback; supports 99+ languages including EN, ZH, and ES; fully offline.
+- [whisper.cpp](https://github.com/ggml-org/whisper.cpp) ★48.3k — C/C++ port of OpenAI Whisper; runs on CPU, GPU, and NPU; AMD Ryzen AI certified for real-time offline ASR.
+- [faster-whisper](https://github.com/SYSTRAN/faster-whisper) ★22.0k — 4× faster Whisper via CTranslate2 inference engine; used by most pronunciation and transcription apps.
+
+### Productivity & Knowledge Management
+
+- [Open WebUI](https://github.com/open-webui/open-webui) ★130.3k — Full Ollama frontend with RAG, voice input, and document chat; 100% offline.
+- [AppFlowy](https://github.com/AppFlowy-IO/AppFlowy) ★69.3k — Open-source Notion alternative; AI writing assistant with local LLM integration; fully offline.
+- [AnythingLLM](https://github.com/Mintplex-Labs/anything-llm) ★57.8k — Open-source RAG desktop app; drop PDFs, docs, and websites, then chat with them locally.
+- [Jan](https://github.com/janhq/jan) ★41.6k — Open-source ChatGPT alternative; runs LLMs locally with built-in model hub; fully offline.
+- [Logseq](https://github.com/logseq/logseq) ★41.9k — Open-source outliner and PKM; stores everything as local Markdown; Ollama plugin for AI chat.
+- [Meetily](https://github.com/Zackriya-Solutions/meetily) ★10.9k — Open-source AI meeting assistant built in Rust; Whisper live transcription + Ollama summary; 100% local, no cloud.
+- [Reor](https://github.com/reorproject/reor) ★8.5k — AI-powered desktop PKM; semantic search, automatic note linking, and Ollama chat; fully offline.
+
+### Photo & Image AI
+
+- [Upscayl](https://github.com/upscayl/upscayl) ★44.4k — Open-source AI image upscaler; Real-ESRGAN and NCNN with 4×/8× upscale; GPU-accelerated; fully offline.
+- [Krita](https://krita.org/) + [Krita AI Diffusion](https://github.com/Acly/krita-ai-diffusion) ★9.9k — Open-source painting and photo editor with Stable Diffusion inpainting, outpainting, and upscale via local ComfyUI backend.
+- [GIMP](https://www.gimp.org/) — Open-source image editor with G'MIC plugin and Script-Fu AI tools; fully offline.
+- [Darktable](https://www.darktable.org/) — Open-source RAW photo darkroom; AI-based denoise and parametric masking; fully offline.
+- [RawTherapee](https://rawtherapee.com/) — Open-source RAW photo developer; AI DeNoise module; fully offline.
+
+### Video, Audio & 3D
+
+- [Blender](https://www.blender.org/) — Open-source 3D creation suite and video sequence editor; v5.1 released March 2026; Blender Lab exploring LLM/NLP commands on 2026 roadmap.
+- [Kdenlive](https://kdenlive.org/) — Open-source non-linear video editor (KDE project); scene detection, audio analysis, and effects; fully offline.
+- [Shotcut](https://shotcut.org/) — Open-source NLE; stable, full format support, colour grading; fully offline.
+- [OpenShot](https://github.com/OpenShot/openshot-qt) ★5.6k — Open-source beginner-friendly NLE; extensible via Python; fully offline.
+- [Buzz](https://github.com/chidiwilliams/buzz) ★18.5k — Open-source desktop Whisper UI for audio/video transcription and translation; all processing local.
+
+### AI Generative Media
+
+- [ComfyUI](https://github.com/Comfy-Org/ComfyUI) ★107.9k — Open-source Stable Diffusion node editor; supports FLUX, img2img, video generation; fully offline.
+- [SD.Next](https://github.com/vladmandic/sdnext) ★7.0k — Open-source Automatic1111 fork; image/video generation, inpainting, ControlNet; fully offline.
+
+### Speech & TTS
+
+- [Coqui TTS](https://github.com/coqui-ai/TTS) ★45.0k — Multi-language offline text-to-speech with voice cloning; supports EN, ZH, ES, and many more.
+- [Piper TTS](https://github.com/rhasspy/piper) ★10.8k — Fast offline neural TTS; 40+ languages; widely used in Home Assistant for local voice responses.
 
 
 ## Compilers & Runtimes
