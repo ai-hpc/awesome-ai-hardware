@@ -39,6 +39,7 @@
 - [AMD Versal AI Edge](https://www.amd.com/en/products/adaptive-socs-and-fpgas/versal/ai-edge.html) - Adaptive SoC family combining programmable logic, CPU cores, and AI Engines.
 - [STMicroelectronics STM32N6](https://www.st.com/en/microcontrollers-microprocessors/stm32n6-series.html) - Microcontroller series with an integrated neural acceleration block for edge AI.
 - [Espressif ESP32-P4](https://www.espressif.com/en/products/socs/esp32-p4) - Application processor for vision, display, and AI-enabled embedded products.
+- [Arduino UNO Q](https://store.arduino.cc/products/uno-q) - Hybrid edge AI board pairing a Qualcomm Dragonwing QRB2210 Linux processor with an STM32U585 real-time microcontroller in the UNO form factor.
 
 ## Silicon and Product Families
 
