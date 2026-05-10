@@ -7,6 +7,7 @@
 - [Hardware Platforms](#hardware-platforms)
 - [Edge and Embedded Hardware](#edge-and-embedded-hardware)
 - [Silicon and Product Families](#silicon-and-product-families)
+- [Emerging AI Silicon](#emerging-ai-silicon)
 - [Compilers and Runtimes](#compilers-and-runtimes)
 - [Benchmarking and Profiling](#benchmarking-and-profiling)
 - [Open-Source Deployment Projects](#open-source-deployment-projects)
@@ -53,6 +54,15 @@
 - [Synaptics Astra](https://www.synaptics.com/products/astra) - Edge AI processor platform for vision, audio, and multimodal embedded systems.
 - [SiMa.ai MLSoC](https://www.sima.ai/products/mlsoc) - Machine-learning SoC platform aimed at industrial edge deployment.
 - [Axelera Metis](https://www.axelera.ai/products/metis-ai-platform) - Edge AI platform built around the Metis accelerator architecture.
+
+## Emerging AI Silicon
+
+- [Furiosa AI](https://furiosa.ai/) - Tensor contraction processor architecture for transformer inference, with a published microarchitecture and open compiler stack.
+- [Rebellions](https://rebellions.ai/) - ATOM and REBEL AI accelerators targeting datacenter inference with a programmable software stack.
+- [Lightmatter](https://lightmatter.com/) - Photonic compute and chip-to-chip interconnect platform for large-scale neural network workloads.
+- [d-Matrix](https://www.d-matrix.ai/) - Digital in-memory compute accelerator family aimed at generative AI inference.
+- [MatX](https://matx.com/) - Custom silicon for large language model training, designed around a bare-metal kernel programming model.
+- [Lemurian Labs](https://www.lemurianlabs.com/) - Spatial processor architecture co-designed with a software-defined hardware compiler stack.
 
 ## Compilers and Runtimes
 
