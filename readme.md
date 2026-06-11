@@ -28,7 +28,6 @@
 - [Tenstorrent](https://tenstorrent.com/) - RISC-V based AI processor company with open software tools and developer boards.
 - [SambaNova](https://sambanova.ai/) - Reconfigurable dataflow systems for enterprise AI training and inference.
 - [Etched Sohu](https://www.etched.com/) - Transformer-focused inference ASIC for high-throughput language model serving.
-- [d-Matrix Corsair](https://www.d-matrix.ai/product/) - Digital in-memory compute accelerator for low-latency generative AI inference in datacenters.
 
 ## Edge and Embedded Hardware
 
@@ -62,7 +61,7 @@
 - [Furiosa AI](https://furiosa.ai/) - Tensor contraction processor architecture for transformer inference, with a published microarchitecture and open compiler stack.
 - [Rebellions](https://rebellions.ai/) - ATOM and REBEL AI accelerators targeting datacenter inference with a programmable software stack.
 - [Lightmatter](https://lightmatter.com/) - Photonic compute and chip-to-chip interconnect platform for large-scale neural network workloads.
-- [d-Matrix](https://www.d-matrix.ai/) - Digital in-memory compute accelerator family aimed at generative AI inference.
+- [d-Matrix](https://www.d-matrix.ai/product/) - Microsoft-backed company shipping the Corsair digital in-memory compute accelerator for low-latency generative AI inference.
 - [MatX](https://matx.com/) - Custom silicon for large language model training, designed around a bare-metal kernel programming model.
 - [Lemurian Labs](https://www.lemurianlabs.com/) - Spatial processor architecture co-designed with a software-defined hardware compiler stack.
 
