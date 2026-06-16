@@ -64,6 +64,7 @@
 - [d-Matrix](https://www.d-matrix.ai/product/) - Microsoft-backed company shipping the Corsair digital in-memory compute accelerator for low-latency generative AI inference.
 - [MatX](https://matx.com/) - Custom silicon for large language model training, designed around a bare-metal kernel programming model.
 - [Lemurian Labs](https://www.lemurianlabs.com/) - Spatial processor architecture co-designed with a software-defined hardware compiler stack.
+- [Tensordyne Napier](https://www.tensordyne.ai/silicon-and-math) - 3nm inference chip using a proprietary logarithmic math architecture in place of floating-point multiply; vendor-stated performance claims vs. Blackwell are pending independent benchmarks.
 
 ## Compilers and Runtimes
 
