@@ -89,6 +89,7 @@
 - [LLMPerf](https://github.com/ray-project/llmperf) - Benchmark harness for large language model serving throughput and latency.
 - [NVIDIA Nsight Systems](https://developer.nvidia.com/nsight-systems) - System-wide performance analysis tool for CPU, GPU, and operating-system timelines.
 - [NVIDIA Nsight Compute](https://developer.nvidia.com/nsight-compute) - Interactive CUDA kernel profiler for occupancy, memory, and instruction analysis.
+- [gv100-fecs-limiter](https://github.com/jajmangold/gv100-fecs-limiter) - Reverse-engineering the FECS speed-select limiter on NVIDIA CMP 100-210 (GV100) GPUs: CUDA probe kernels, VBIOS decode, BAR0 register probes, leaked NVIDIA source analysis.
 - [PyTorch Profiler](https://pytorch.org/tutorials/recipes/recipes/profiler_recipe.html) - Built-in profiler for PyTorch model execution and operator-level timing.
 - [Perfetto](https://perfetto.dev/) - Production-grade tracing and profiling platform for systems performance analysis.
 
